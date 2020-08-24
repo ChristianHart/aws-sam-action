@@ -16,6 +16,8 @@ function setWorkingDir(){
 		cd $INPUT_WORKING_DIR
 		echo "pwd"
 		pwd
+	else
+		echo "No working dir set, using standard template dir: $(pwd)"
 	fi
 }
 
@@ -69,6 +71,7 @@ ${output}
 }
 
 function main(){
+	setWorkingDirsetWorkingDir
 	parseInputs
 	installAwsSam
 	runSam
