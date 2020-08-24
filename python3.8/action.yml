@@ -14,6 +14,9 @@ inputs:
   actions_comment:
     description: 'Whether or not to comment on pull requests.'
     default: false
+  working_dir:
+    description: '(Optional) Relative path to dir containing sam template'
+    default: false
 runs:
   using: 'docker'
   image: './Dockerfile'
