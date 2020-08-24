@@ -10,6 +10,15 @@ function parseInputs(){
 	fi
 }
 
+function setWorkingDir(){
+	if ! [ -z "$INPUT_WORKING_DIR" ]; then
+		echo "cd $INPUT_WORKING_DIR"
+		cd $INPUT_WORKING_DIR
+		echo "pwd"
+		pwd
+	fi
+}
+
 function installAwsSam(){
 	echo "Install aws-sam-cli ${INPUT_SAM_VERSION}"
 	if [ "${INPUT_SAM_VERSION}" == "latest" ]; then
@@ -61,6 +70,7 @@ ${output}
 
 function main(){
 	parseInputs
+	setWorkingDir
 	installAwsSam
 	runSam
 }
