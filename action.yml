@@ -1,4 +1,4 @@
-name: 'AWS SAM GitHub Actions'
+name: 'AWS SAM GitHub Actions [python3.8]'
 description: 'Runs AWS-SAM via GitHub Actions.'
 author: 'youyo <1003ni2@gmail.com>'
 branding:
@@ -17,7 +17,6 @@ inputs:
   working_dir:
     description: '(Optional) Relative path to dir containing sam template'
     default: false
-
 runs:
   using: 'docker'
   image: './Dockerfile'

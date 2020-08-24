@@ -71,8 +71,8 @@ ${output}
 }
 
 function main(){
+	setWorkingDirsetWorkingDir
 	parseInputs
-	setWorkingDir
 	installAwsSam
 	runSam
 }
