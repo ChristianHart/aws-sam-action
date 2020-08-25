@@ -11,7 +11,7 @@ function parseInputs(){
 }
 
 function setWorkingDir(){
-	if ! [ -z "${INPUT_WORKING_DIR}" == "" ]; then
+	if ! [ "${INPUT_WORKING_DIR}" == "" ]; then
 		echo "cd $INPUT_WORKING_DIR"
 		cd $INPUT_WORKING_DIR
 		echo "pwd"
