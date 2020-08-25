@@ -6,7 +6,7 @@ function parseInputs(){
 	# Required inputs
 	if [ "${INPUT_SAM_COMMAND}" == "" ]; then
 		echo "Input sam_subcommand cannot be empty"
-		exit 1
+		exit 1;
 	fi
 }
 
@@ -34,7 +34,7 @@ function installAwsSam(){
 		pip install aws-sam-cli==${INPUT_SAM_VERSION} >/dev/null 2>&1
 		if [ "${?}" -ne 0 ]; then
 			echo "Failed to install aws-sam-cli ${INPUT_SAM_VERSION}"
-			exit 1
+			exit 1;
 		else
 			echo "Successful install aws-sam-cli ${INPUT_SAM_VERSION}"
 		fi
