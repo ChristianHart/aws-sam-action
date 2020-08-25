@@ -34,6 +34,7 @@ function installAwsSam(){
 		pip install aws-sam-cli==${INPUT_SAM_VERSION} >/dev/null 2>&1
 		if [ "${?}" -ne 0 ]; then
 			echo "Failed to install aws-sam-cli ${INPUT_SAM_VERSION}"
+			exit 1
 		else
 			echo "Successful install aws-sam-cli ${INPUT_SAM_VERSION}"
 		fi
@@ -49,6 +50,8 @@ function runSam(){
 	commentStatus="Failed"
 	if [ "${exitCode}" == "0" ]; then
 		commentStatus="Success"
+	else 
+		exit 1
 	fi
 
 	if [ "$GITHUB_EVENT_NAME" == "pull_request" ] && [ "${INPUT_ACTIONS_COMMENT}" == "true" ]; then
